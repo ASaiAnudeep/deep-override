@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "description": "recursive object extending",
   "main": "./src/index.js",
+  "types": "types.d.ts",
   "files": [
-    "/src"
+    "/src",
+    "types.d.ts"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

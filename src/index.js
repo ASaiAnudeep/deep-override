@@ -16,7 +16,7 @@ function cloneSpecificValue(val) {
   }
 }
 
-function extend(...rawArgs) {
+function override(...rawArgs) {
   if (rawArgs.length < 1 || typeof rawArgs[0] !== 'object') return false;
   if (rawArgs.length < 2) return rawArgs[0];
   const target = rawArgs[0];
@@ -35,12 +35,12 @@ function extend(...rawArgs) {
           target[index] = cloneSpecificValue(val);
         } else if (typeof src !== 'object' || src === null) {
           if (Array.isArray(val)) {
-            target[index] = extend([], val);
+            target[index] = override([], val);
           } else {
-            target[index] = extend({}, val);
+            target[index] = override({}, val);
           }
         } else {
-          target[index] = extend(src, val);
+          target[index] = override(src, val);
         }
         return;
       });
@@ -55,12 +55,12 @@ function extend(...rawArgs) {
           target[key] = cloneSpecificValue(val);
         } else if (typeof src !== 'object' || src === null) {
           if (Array.isArray(val)) {
-            target[key] = extend([], val);
+            target[key] = override([], val);
           } else {
-            target[key] = extend({}, val);
+            target[key] = override({}, val);
           }
         } else {
-          target[key] = extend(src, val);
+          target[key] = override(src, val);
         }
         return;
       });
@@ -69,4 +69,4 @@ function extend(...rawArgs) {
   return target;
 }
 
-module.exports = extend;
+module.exports = override;
