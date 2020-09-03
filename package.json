@@ -1,7 +1,7 @@
 {
   "name": "deep-override",
-  "version": "1.0.0",
-  "description": "recursive object extending",
+  "version": "1.0.1",
+  "description": "recursive object extending & overriding",
   "main": "./src/index.js",
   "types": "types.d.ts",
   "files": [
