@@ -46,6 +46,8 @@ function override(...rawArgs) {
       });
     } else {
       Object.keys(obj).forEach(key => {
+        if (key == '__proto__' || key == 'constructor' || key == 'prototype')
+          return
         src = target[key];
         val = obj[key];
         if (val === target) {
